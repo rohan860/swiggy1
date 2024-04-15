@@ -8,7 +8,7 @@ const RestaurantMenu = ()=>{
 // const [resInfo,setResInfo]=useState(null);
 const {resId}= useParams();
 const resInfo = useRestaurentMenu(resId);
-
+const [showIndex,setShowIndex]=useState(0);
  
 
 // console.log(resId);
@@ -55,7 +55,11 @@ const resInfo = useRestaurentMenu(resId);
 </ul> */}
 
         {
-          categories.map((category)=> (<RestaurentCategory key={category?.card?.card.title} data={category?.card?.card} />))
+          categories.map((category,index)=> (<RestaurentCategory key={category?.card?.card.title} data={category?.card?.card}
+          showItems={index === showIndex ? true :false}
+          // showItems={true}
+          setShowIndex={()=> setShowIndex(index)}
+           />))
         }
 
 
