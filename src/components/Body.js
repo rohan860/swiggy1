@@ -72,7 +72,7 @@ const Body = () => {
             className="search-box border border-solid border-black rounded-lg p-2  "
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
-            placeholder="Search restaurants..."
+            placeholder="Search restaurant..."
             onKeyDown={(e) => {
     if (e.key === 'Enter') {
       handleSearch();
