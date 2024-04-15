@@ -1,0 +1,22 @@
+ # Node modules
+node_modules/
+
+# Parcel cache
+.parcel-cache
+
+# Build files
+dist/
+*.log
+
+# Environment variables
+.env
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Editor specific files
+.vscode/
+*.swp
+*.swo
+
