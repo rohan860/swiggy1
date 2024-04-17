@@ -4,7 +4,7 @@ import {useRouteError} from "react-router-dom";
 const Error = () => {
 
     const er = useRouteError();
-    console.log(er);
+    // console.log(er);
     return (
         <div>
             <h1>404 not found</h1>

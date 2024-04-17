@@ -2,7 +2,7 @@ import { useState } from "react";
 import ItemList from "./ItemList";
 const RestaurentCategory =({data ,showItems,setShowIndex})=>{
     // const [showItems,setShowItems]= useState(data.title == "Recommended");
-    console.log(data);
+    // console.log(data);
     const handleClick= ()=>{
         // showItems ? setShowItems(false):setShowItems(true);
         setShowIndex();

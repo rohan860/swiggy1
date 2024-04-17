@@ -1,13 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { LOGO_URL } from "../Utils/constant";
 import { Link, useLocation } from "react-router-dom";
 import useOnlineStatus from "../Utils/useOnlineStatus";
+import UserContext from "../Utils/UserContext";
 
 const Header = () => {
     const [btnNameReact, setBtnNameReact] = useState("Logout");
     const onlineStatus = useOnlineStatus();
     const location = useLocation();
-
+    const {loggedInUser} = useContext(UserContext);
+       console.log(loggedInUser);
     // Function to toggle button text and handle grocery link visibility
     const toggleButton = () => {
         setBtnNameReact(prevState => (prevState === "Login" ? "Logout" : "Login"));
@@ -45,6 +47,9 @@ const Header = () => {
                     >
                         {btnNameReact}
                     </button>
+                    <li className="px-4">
+{loggedInUser}
+                    </li>
                 </ul>
             </div>
         </div>

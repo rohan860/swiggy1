@@ -1,6 +1,6 @@
 import { url } from "../Utils/constant";
 const ItemList = ({items})=>{
-    console.log(items);
+    // console.log(items);
     return(
         <div>
             <div>
