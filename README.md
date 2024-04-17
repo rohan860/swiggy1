@@ -23,7 +23,7 @@ useState()- Superpowerful state variable in react=>whenever a state variable upd
 - client sider routing 
 - server side routinh
 
-<h1 align="center">Hi 👋, I'm Sarthak Baderiya</h1>
+<h1 align="center">Hi 👋, I'm </h1>
 <h3 align="center">A passionate frontend developer from India</h3>
 
 <h3 align="left">Connect with me:</h3>
