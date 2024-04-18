@@ -39,4 +39,8 @@ useState()- Superpowerful state variable in react=>whenever a state variable upd
 
 # Redux store 
 - install redux toolkit 
-- Build our 
+- Build our store
+- connect our store to our app
+- Slice (cartSlice)
+- dispatch(action)
+- selector

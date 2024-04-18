@@ -3,6 +3,7 @@ import { LOGO_URL } from "../Utils/constant";
 import { Link, useLocation } from "react-router-dom";
 import useOnlineStatus from "../Utils/useOnlineStatus";
 import UserContext from "../Utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
     const [btnNameReact, setBtnNameReact] = useState("Logout");
@@ -15,6 +16,9 @@ const Header = () => {
         setBtnNameReact(prevState => (prevState === "Login" ? "Logout" : "Login"));
     };
 
+    // Subcribing to the store using selector  Access to the store
+    const cartItems = useSelector((store)=> store.cart.items);
+    console.log(cartItems);
     return (
         <div className="header flex justify-between shadow-lg  bg-pink-200">
             <div className="logo-container">
@@ -39,7 +43,13 @@ const Header = () => {
                     <li className="px-4">
                         <Link to="/contact">Contact Us</Link>
                     </li>
-                    <li>Cart</li>
+                    <li className="font-bold px-4 text-xl">
+                    {location.pathname !== "/cart" && (
+                    <Link to="/cart">
+                    Cart - ({cartItems.length} items)
+                    </Link>
+                    )}
+                    </li>
                     <button
                         className="login"
                         style={{ display: 'block', margin: '0 auto', width: '100px' /* adjust width as needed */ }}

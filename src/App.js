@@ -9,7 +9,10 @@ import RestaurantMenu from "./components/RestaurentMenu";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Contact from "./components/contact";
 import UserContext from "./Utils/UserContext";
-
+import { Provider } from "react-redux";
+import appStore from "./Utils/appStore";
+import Cart from "./components/Cart";
+import { Toaster } from "react-hot-toast";
 // React Element
 const heading = React.createElement("h1", { id: "heading" }, "this is heading");
 
@@ -29,14 +32,17 @@ const AppLayout = () => {
     setUserName(data.name);
   },[])
   return (
+    <Provider store={appStore}>
     <UserContext.Provider value={{loggedInUser: userName , setUserName}}  >
       <div className="app">
         {/* Header */}
         <Header />
         {/* Outlet for rendering nested routes */}
         <Outlet />
+        <Toaster />
       </div>
     </UserContext.Provider>
+    </Provider>
   );
 }
 
@@ -69,7 +75,12 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />
-      }
+      },
+      
+      {
+        path: "/cart",
+        element: <Cart />
+      },
     ],
   },
 ]);
